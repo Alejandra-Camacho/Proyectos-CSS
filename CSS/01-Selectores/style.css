@@ -1,0 +1,92 @@
+/* ---> SELECTORES <--- */
+
+
+/* Selector universal */
+
+* {
+    font-family: Helvetica, sans-serif;
+}
+
+
+/* de etiqueta */
+
+h1 {
+    background: red;
+    color: white;
+    padding: 10px;
+}
+
+a {
+    font-size: 18px;
+    color: green;
+    text-decoration: none;
+}
+
+
+/* Selector compuesto */
+
+footer a {
+    color: blueviolet;
+}
+
+
+/* por id */
+
+#descripcion {
+    border: 5px solid blue;
+    padding: 30px;
+    margin-bottom: 10px;
+}
+
+
+/* comparte estilos entre ambos selectores */
+
+#descripcion,
+#title {
+    border: 5px solid blue;
+    padding: 30px;
+    margin-bottom: 10px;
+}
+
+
+/* por clase */
+
+.parrafo {
+    font-weight: bolder;
+    padding: 15px;
+}
+
+.parrafo1 {
+    background-color: teal;
+    color: white;
+}
+
+.parrafo3 {
+    background-color: orangered;
+    color: white;
+}
+
+
+/* por atributo */
+
+input[type="text"] {
+    color: red;
+}
+
+
+/* selectores hijos */
+
+#menu>li>a {
+    color: red;
+}
+
+
+/* prioridad en css */
+
+#saludo h1 {
+    background-color: brown;
+}
+
+h1 {
+    background-color: purple;
+}
