@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.libre {
+    position: absolute;
+    top: 200px;
+    left: 20px;
+    border: 1px solid black;
+    background-color: lightgoldenrodyellow;
+    color: #444;
+    width: 50px;
+    height: 50px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.libre2 {
+    background-color: lightgreen;
+    top: 180px;
+    left: 50px;
+    z-index: -1;
+}
+
+.fija {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    border: 1px solid black;
+    background-color: lightblue;
+    color: #444;
+    width: 50px;
+    height: 50px;
+    font-size: 13px;
+    text-align: center;
+}
