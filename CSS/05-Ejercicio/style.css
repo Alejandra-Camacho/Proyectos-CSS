@@ -74,7 +74,7 @@ div#general section#contenido .caja {
     /* Sombras */
     box-shadow: 5px 5px 10px lightgray;
     /* Bordes Redondeados */
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .sombra-interior {
@@ -87,10 +87,17 @@ div#general section#contenido .caja h2 {
 }
 
 aside#lateral {
-    width: 30%;
+    width: 29%;
+    max-height: 300px;
+    /* overflow-y: scroll; */
+    overflow: hidden;
     margin-top: 10px;
     float: left;
     text-align: center;
+}
+
+aside#lateral p {
+    text-align: justify;
 }
 
 .clearfix {
