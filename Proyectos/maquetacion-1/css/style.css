@@ -1,0 +1,429 @@
+/* Fuentes */
+
+@font-face {
+    font-family: "Nevis";
+    src: url("fonts/nevis.ttf");
+    src: url("fonts/nevis.eot?iefix") format("embedded-opentype"), url("fonts/nevis.woff") format("woff"), url("fonts/nevis.ttf") format("truetype"), url("fonts/nevis.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "FjallaOne";
+    src: url("fonts/FjallaOne-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "icons";
+    src: url("fonts/websymbols-regular-webfont.svg#WebSymbolsRegular") format("svg"), url("fonts/websymbols-regular-webfont.eot");
+    src: url("fonts/websymbols-regular-webfont.eot?iefix") format("embedded-opentype"), url("fonts/websymbols-regular-webfont.woff") format("woff"), url("fonts/websymbols-regular-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Colores */
+
+.granate {
+    color: #9c255a!important;
+}
+
+.naranja {
+    color: #D69D4D!important;
+}
+
+
+/* Estilos Generales */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('../img/paven.png');
+}
+
+.icon {
+    font-family: icons;
+    float: left;
+    margin-right: 5px;
+    margin-top: -2px;
+}
+
+.clearfix {
+    float: none;
+    clear: both;
+}
+
+
+/* Formularios */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    border: 1px solid #C9C9C9;
+    box-shadow: 0 0 2px #CCC inset;
+    background-color: #FFF;
+    padding: 2px 1px;
+    color: gray;
+    transition: all 300ms;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border: 1px solid #71B052;
+    color: #000;
+    outline: 0px;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+    display: block;
+    border: 1px solid green;
+    border-radius: 2px;
+    width: 60px;
+    padding: 3px;
+    background-color: #71B052;
+    color: #FFF;
+    cursor: pointer;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover {
+    box-shadow: 0 0 2px gray;
+}
+
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+button:active {
+    box-shadow: 0 0 3px gray inset;
+}
+
+
+/* Header */
+
+header {
+    min-width: 1024px;
+    width: 100%;
+    height: 250px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+header h1 {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-family: "Nevis";
+    letter-spacing: 4px;
+    margin-top: 10px;
+    text-shadow: 0px 2px 1px #333;
+    transition: all 300ms;
+}
+
+header h1:hover {
+    text-shadow: 0px 2px 1px #333, 0px 0px 4px #71B052;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: #71B052;
+}
+
+header div {
+    width: 770px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+header div img {
+    display: block;
+    margin: 0 auto;
+    width: 140px;
+}
+
+
+/* Menú */
+
+nav {
+    width: 100%;
+    background-color: #333;
+    height: 40px;
+    box-shadow: 0px 0px 2px gray;
+    font-family: sans-serif, Helvetica, Arial;
+    font-size: 14px;
+}
+
+nav ul {
+    list-style: none;
+    width: 1050px;
+    margin: auto;
+}
+
+nav>ul>li {
+    float: left;
+    line-height: 40px;
+    border-right: 1px solid gray;
+    transition: all 300ms;
+}
+
+nav>ul>li:first-child {
+    border-left: 1px solid gray;
+}
+
+nav>ul>li:hover {
+    background-color: #71B052;
+    box-shadow: 0 0 4px green inset;
+}
+
+nav>ul>li a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0 20px;
+    color: #FFF;
+}
+
+
+/* Menú desplegable */
+
+nav>ul>li>ul {
+    display: none;
+    position: absolute;
+    width: 160px;
+    box-shadow: 0 2px 2px gray;
+    z-index: 1;
+}
+
+nav>ul>li:hover>ul {
+    display: block;
+}
+
+nav>ul>li>ul>li {
+    background-color: #F2F1F0;
+    border-bottom: 1px solid #D6D6D6;
+    padding: 8px;
+    line-height: 25px;
+    font-size: 13px;
+    transition: all 300ms;
+}
+
+nav>ul>li>ul>li a {
+    color: #666;
+}
+
+nav>ul>li>ul>li:hover {
+    box-shadow: 0 0 2px #CCC inset;
+    background-color: #999;
+}
+
+nav>ul>li>ul>li:hover a {
+    color: #FFF;
+}
+
+
+/* Contenido */
+
+div#content {
+    width: 1250px;
+    min-height: 1100px;
+    margin: 0 auto;
+}
+
+
+/* Barra lateral */
+
+aside {
+    width: 200px;
+    float: left;
+    margin: 30px;
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    box-shadow: 0 2px 2px #CCC;
+    font-family: sans-serif;
+}
+
+aside .widget {
+    display: block;
+    width: 180px;
+    margin: 5px auto;
+    padding: 8px 10px;
+    font-size: 14px;
+    border-bottom: 1px dashed #333;
+}
+
+aside .widget:last-child {
+    margin-bottom: 20px;
+}
+
+aside h3 {
+    display: block;
+    color: #333;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+    margin-bottom: 15px;
+    background-color: #F2F3F2;
+    border: 1px solid #CCC;
+    border-left: none;
+    border-right: none;
+}
+
+div#content aside:last-of-type {
+    width: 180px;
+    padding: 10px;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+
+/* Formularios Barra Lateral */
+
+aside div label,
+aside div input[type="text"],
+aside div input[type="email"],
+aside div input[type="password"],
+aside div a {
+    display: block;
+    width: 95%;
+    margin: 2px 0;
+}
+
+aside div input[type="buttom"],
+aside div input[type="submit"],
+aside div button {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+aside input,
+aside label {
+    margin: 0 auto;
+    text-align: center;
+}
+
+aside a {
+    color: #529125;
+    text-decoration: none;
+}
+
+aside a:hover {
+    color: #285616;
+}
+
+aside a:visited {
+    color: #529125;
+}
+
+aside li {
+    margin-top: 8px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    list-style: square;
+}
+
+
+/* Secciones  */
+
+div#sections {
+    float: right;
+    width: 75%;
+    font-family: sans-serif;
+    margin-right: 20px;
+}
+
+div#sections h2 {
+    font-family: "FjallaOne";
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: -20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #CCC;
+}
+
+div#sections section {
+    margin-top: 40px;
+    background-color: #FFF;
+    padding: 20px;
+    border: 1px solid #CCC;
+    box-shadow: 0 0 4px #C9C9C9;
+    color: #333;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+div#sections article {
+    margin: 20px 10px;
+}
+
+div#sections span.date {
+    font-size: 14px;
+    color: gray;
+}
+
+div#sections img.sticker1,
+div#sections img.sticker2 {
+    position: absolute;
+    margin-top: -38px;
+    z-index: 0;
+}
+
+div#sections img.sticker2 {
+    margin-left: 860px;
+}
+
+section a {
+    color: #529125;
+    text-decoration: none;
+}
+
+section a:hover {
+    color: #285616;
+}
+
+section a:visited {
+    color: #529125;
+}
+
+div#sections div>a,
+div#sections div>a:visited {
+    font-family: sans-serif;
+    float: right;
+    margin-top: 20px;
+    color: #529125;
+    text-decoration: none;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #333;
+    color: #FFF;
+    width: 100%;
+    box-shadow: 0 0 2px gray;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 10px 0;
+    font-family: sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+footer a,
+footer a:visited {
+    color: #529125;
+    text-decoration: none;
+}
