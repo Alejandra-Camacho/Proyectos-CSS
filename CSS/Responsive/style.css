@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix {
+    float: none;
+    clear: both;
+}
+
+div#container {
+    width: 70%;
+    background-color: red;
+    margin: 40px auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background-color: lightskyblue;
+    color: #333;
+    text-align: center;
+}
+
+aside {
+    width: 25%;
+    min-height: 500px;
+    line-height: 500px;
+    float: left;
+    background-color: aqua;
+    text-align: center;
+}
+
+section div {
+    width: 75%;
+    min-height: 500px;
+    float: left;
+    background-color: lemonchiffon;
+}
+
+div article {
+    width: 25%;
+    height: 150px;
+    line-height: 150px;
+    float: left;
+    background-color: green;
+    margin: 15px;
+    color: #FFF;
+    text-align: center;
+    border: 2px solid #FFF;
+}
+
+
+/* Responsive */
+
+
+/* Desde la anchura 0px hasta la anchura 888px de pantalla */
+
+@media screen and (max-width: 888px) {
+    /* Se ejecutarán estos estilos */
+    div article {
+        width: 40%;
+        background-color: red;
+    }
+}
+
+@media (max-width: 647px) {
+    div#container {
+        overflow: hidden;
+    }
+    aside {
+        float: none;
+        width: 91%;
+        min-height: auto;
+        line-height: 20px;
+        padding: 21px;
+    }
+    section div {
+        width: 100%;
+    }
+    div article {
+        width: 90%;
+        background-color: blue;
+    }
+}
