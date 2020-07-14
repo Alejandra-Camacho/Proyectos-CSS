@@ -43,6 +43,11 @@ body {
     font-family: "WebSymbolsRegular";
 }
 
+.clearfix {
+    float: none;
+    clear: both;
+}
+
 
 /* Header */
 
@@ -73,6 +78,54 @@ header {
     margin-top: 8px;
     margin-left: 26px;
     font-size: 30px;
+    animation-name: rotate-gear;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#logo:hover {
+    border-radius: 2px;
+    color: #000;
+    background-color: #CCC;
+}
+
+#logo:hover span.icon {
+    animation: fromBellow 500ms linear;
+}
+
+#logo:hover h3 {
+    animation: fromRight 300ms linear;
+}
+
+@keyframes rotate-gear {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes fromBellow {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(200%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes fromRight {
+    from {
+        transform: translateX(200%);
+    }
+    to {
+        transform: translateX(0%);
+    }
 }
 
 #logo h3 {
@@ -84,14 +137,14 @@ header {
     transition: all 300ms;
 }
 
-nav {
+header nav {
     float: right;
     height: 70px;
     background-color: transparent;
     /* margin-right: 15%; */
 }
 
-nav ul li {
+header nav ul li {
     display: inline-block;
     font-size: 24px;
     margin: 0 20px;
@@ -99,14 +152,14 @@ nav ul li {
     line-height: 70px;
 }
 
-nav ul li a {
+header nav ul li a {
     display: block;
     color: #FFF;
     text-decoration: none;
     transition: all 200ms;
 }
 
-nav ul li a:hover {
+header nav ul li a:hover {
     color: #37BCF9;
     transform: scale(1.2, 1.2);
 }
@@ -121,8 +174,19 @@ div#banner {
     box-shadow: 0 0 2px gray;
     background-image: url("../img/bakbaner.png");
     /* background-position: -200px -200px; */
+    overflow: hidden;
     background-position: -386px -213px;
     margin: 20px auto;
+    animation: backBanner 10s linear;
+}
+
+@keyframes backBanner {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -386px -213px;
+    }
 }
 
 div#banner h1 {
@@ -136,6 +200,30 @@ div#banner h1 {
     text-align: center;
     letter-spacing: 2px;
     margin: 27px auto;
+    animation: showText 10s linear;
+}
+
+@keyframes showText {
+    0% {
+        transform: translateX(-600%) scale(5, 5);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(600%) scale(5, 5);
+        opacity: 1;
+    }
+    75% {
+        transform: translateX(-600%) scale(5, 5);
+        text-shadow: none;
+        color: transparent;
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%) scale(1, 1);
+        text-shadow: 2px 2px 1px black;
+        color: #FFF;
+        opacity: 1;
+    }
 }
 
 
@@ -153,13 +241,65 @@ div.card {
     margin-top: 40px;
     cursor: pointer;
     transition: all 300ms;
+    transform: all 300ms;
+}
+
+div.card:hover {
+    background-color: #000;
+}
+
+div.card:hover .icon {
+    font-size: 70px;
+    color: #37BCF9;
+    animation: showIcon 400ms linear;
+}
+
+div.card:hover .category {
+    color: #FFF;
+    animation: showCategory 500ms linear;
+}
+
+div.card:hover .description {
+    color: #FFF;
+    animation: showDescription 500ms linear;
+}
+
+@keyframes showDescription {
+    from {
+        transform: translateX(-300%);
+        color: #000;
+    }
+    to {
+        transform: translateX(0%);
+        color: #FFF;
+    }
+}
+
+@keyframes showCategory {
+    from {
+        transform: translateY(-300%);
+        color: #000;
+    }
+    to {
+        transform: translateY(0%);
+        color: #FFF;
+    }
+}
+
+@keyframes showIcon {
+    from {
+        transform: translateY(-200%);
+    }
+    to {
+        transform: translateY(0%);
+    }
 }
 
 div.card:last-child {
     margin-right: 0;
 }
 
-.card .icon {
+div.card .icon {
     display: block;
     width: 100%;
     height: 130px;
@@ -167,9 +307,10 @@ div.card:last-child {
     line-height: 130px;
     text-align: center;
     margin: 0 auto;
+    transition: all 300ms;
 }
 
-.card .category {
+div.card .category {
     width: 100%;
     height: 50px;
     font-family: "TrebuchetMS";
@@ -177,13 +318,15 @@ div.card:last-child {
     font-weight: bold;
     text-align: center;
     color: #00538C;
+    transition: all 300ms;
 }
 
-.card .description {
+div.card .description {
     font-family: "TrebuchetMS";
     font-size: 15px;
     text-align: center;
     color: #0370b9;
+    transition: all 300ms;
 }
 
 
@@ -360,4 +503,233 @@ aside>div {
     margin-top: 10px;
     margin-left: 20px;
     margin-bottom: 20px;
+    font-family: "WebSymbolsRegular";
+}
+
+#social .overlay {
+    display: block;
+    position: absolute;
+    padding: 5px;
+    margin-left: 70px;
+    margin-top: -52px;
+    cursor: pointer;
+    height: 18px;
+    font-family: sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0 0 1px #CCC;
+    border: 3px solid #FFF;
+    box-shadow: 0 0 4px #CCC;
+    background-color: #F4F7FE;
+    transform: translateX(-80%);
+    opacity: 0;
+    transition: all 400ms;
+}
+
+#social div:hover .overlay {
+    /* background-color: red; */
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+
+/* Articulos */
+
+section#articles {
+    width: 870px;
+    float: left;
+}
+
+section#articles h2 {
+    display: block;
+    width: 100%;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+    font-family: "BebasNeue";
+    font-size: 40px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    background: url("../img/pxgray.png"), #FFF;
+    box-shadow: 0 1px 0 #393D3F, 1px 2px 0 #393D3F, 2px 3px 0 #393D3F, 3px 4px 0 #393D3F;
+    margin: 20px auto 15px auto;
+}
+
+section#articles article {
+    width: 100%;
+    height: auto;
+    border: 1px solid #CCC;
+    margin: 40px auto;
+    padding: 10px;
+    font-family: "TrebuchetMS";
+    background-color: #FFF;
+    color: #000;
+    box-shadow: 1px 1px 2px #DDD;
+}
+
+section#articles article h4 {
+    display: block;
+    font-size: 23px;
+    margin: 3px;
+}
+
+section#articles article h4 a {
+    text-decoration: none;
+    color: #00538C;
+}
+
+section#articles article h4 a:hover {
+    text-decoration: underline;
+}
+
+section#articles .data {
+    float: right;
+    background-color: #393D3F;
+    color: #FFF;
+    height: 30px;
+    line-height: 30px;
+    margin: -10px;
+    padding: 4px;
+    font-size: 13px;
+    border-radius: 0 0 0 5px;
+}
+
+section#articles .data span {
+    margin: 6px;
+}
+
+section#articles p {
+    margin: 10px 0;
+    font-size: 15px;
+}
+
+section#articles article:last-child {
+    height: 100px;
+    margin-top: 60px;
+    line-height: 100px;
+    text-align: center;
+    transition: all 1s;
+}
+
+section#articles article:last-child a {
+    display: block;
+    font-family: "BebasNeue";
+    font-size: 40px;
+    letter-spacing: 3px;
+    text-decoration: none;
+    color: #00538C;
+    transition: all 1s;
+}
+
+section#articles article:last-child:hover {
+    background-color: #333;
+    border: 10px solid #37BCF9;
+    border-radius: 240px;
+    box-shadow: 0 0 10px gray;
+    animation: blink 10s infinite linear;
+}
+
+section#articles article:last-child:hover a {
+    text-shadow: 1px 1px 1px #000, 1px 2px 1px #000, 1px 3px 1px #000, 1px 4px 1px #000, 1px 5px 1px #000;
+    color: #FFF;
+}
+
+@keyframes blink {
+    0% {
+        border: 10px solid #37BCF9;
+    }
+    25% {
+        border: 10px solid #008000;
+    }
+    50% {
+        border: 10px solid #FFFF00;
+    }
+    75% {
+        border: 10px solid #FFF;
+    }
+    100% {
+        border: 10px solid #37BCF9;
+    }
+}
+
+
+/* Footer */
+
+footer {
+    width: 100%;
+    height: 470px;
+    background-color: #000;
+    color: #FFF;
+    overflow: hidden;
+}
+
+footer .wrap>div {
+    float: left;
+    width: 320px;
+    height: 370px;
+    margin: 40px;
+    font-family: "TrebuchetMS";
+    text-align: center;
+    color: #FFF;
+}
+
+footer a {
+    text-decoration: none;
+    color: #37BCF9;
+    transition: all 300ms;
+}
+
+footer h5 {
+    display: block;
+    background: url("../img/pxgray.png"), #FFF;
+    height: 50px;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: "BebasNeue";
+    font-size: 40px;
+    line-height: 55px;
+    color: #000;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+footer ul {
+    text-align: left;
+    margin: 20px;
+    font-size: 25px;
+}
+
+footer ul li {
+    margin-top: 10px;
+    padding: 5px;
+    border-bottom: 1px solid #CCC;
+}
+
+footer ul li a {
+    display: block;
+    height: 40px;
+    transition: all 300ms;
+}
+
+footer ul li:hover a {
+    padding-left: 40px;
+    color: #FFF;
+    width: 100%;
+}
+
+footer iframe {
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 5px solid #FFF;
+    box-shadow: 0 0 5px gray;
+}
+
+footer img {
+    margin-bottom: 15px;
+}
+
+footer #browsers img {
+    width: 45px;
 }
