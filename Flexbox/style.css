@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#layout {
+    border: 3px solid black;
+    padding: 5px;
+    height: 500px;
+    /* Flexbox */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* Une wrap y direction */
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.caja {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    background-color: #CCC;
+    border: 3px dotted #444;
+    /* Flexbox */
+    /* flex-grow: 1; */
+}
+
+.red {
+    background-color: rgb(255, 91, 91);
+}
+
+.green {
+    background-color: rgb(84, 207, 84);
+}
+
+.blue {
+    background-color: rgb(42, 85, 226);
+}
+
+.orange {
+    background-color: rgb(241, 186, 33);
+}
